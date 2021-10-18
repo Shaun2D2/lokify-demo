@@ -2,13 +2,13 @@ import { useMemo } from 'react';
 import queryString from 'query-string';
 
 const useAudioEnabled = () => {
-    const audioEnabled = useMemo(() => {
-        const { audio } = queryString.parse(location.search);
+  const audioEnabled = useMemo(() => {
+    const { audio } = queryString.parse(window.location.search);
 
-        return audio === 'true';
-    }, []);
+    return audio === 'true';
+  }, []);
 
-    return audioEnabled
-}
+  return audioEnabled;
+};
 
 export default useAudioEnabled;
