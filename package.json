@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "npx eslint ./src/**/** --ignore-pattern assets",
-    "lint:fix": "npx eslint ./src/** --fix",
+    "lint:fix": "npx eslint ./src/**/** --ignore-pattern assets --fix",
     "local": "npx webpack serve --mode development",
     "build": "npx webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
