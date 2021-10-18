@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import queryString from 'query-string';
 
 import Demo from './Components/Demo';
 import Navbar from './Components/Navbar';
 
 import useAudioEnabled from './hooks/useAudioEnabled';
+
+import 'lokify/dist/style.css';
 
 const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
@@ -23,6 +24,10 @@ const Menu = styled.ul`
     flex-direction: row;
     margin: 0;
     padding: 0;
+    @media(max-width: 690px) {
+        position: absolute;
+        top: -100px;
+    }
 `;
 
 const MenuItem = styled.li`

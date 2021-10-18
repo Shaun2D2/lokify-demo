@@ -16,6 +16,13 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
                 test: /\.mp3/,
                 loader: 'file-loader',
                 exclude: /node_modules/
