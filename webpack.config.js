@@ -1,10 +1,11 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve('./dist'),
+        path: path.resolve(__dirname, './dist'),
         filename: 'bundle.js'
     },
     module: {
@@ -13,13 +14,18 @@ module.exports = {
                 test: /\.js(x)?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.mp3/,
+                loader: 'file-loader',
+                exclude: /node_modules/
             }
         ]
     },
     plugins: [
         new HtmlPlugin({
             template: './template.html'
-        })
+        }),
     ],
     resolve: {
         extensions: ['.js', '.jsx']

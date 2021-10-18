@@ -1,7 +1,8 @@
-import { render, Render } from "react-dom";
+import React from 'react';
+import { render } from "react-dom";
 
-import Demo from './Demo';
+import App from './App';
 
-const app = document.getElementById('root');
+const app = document.getElementById('app');
 
-render(<Demo />, app);
+render(<App />, app);
