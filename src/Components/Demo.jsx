@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
 import styled from 'styled-components';
 import { Loki } from 'lokify';
@@ -15,18 +16,14 @@ const Container = styled.div`
 `;
 
 const Demo = () => {
-    const audioEnabled = useAudioEnabled();
+  const audioEnabled = useAudioEnabled();
 
-    const completeHanlder = () => {
-        console.log('complete!');
-    }
-
-    return (
-        <Container>
-            <Loki onComplete={completeHanlder} />
-            { audioEnabled && <audio src={themeSong} autoPlay/>}
-        </Container>
-    )
-}
+  return (
+    <Container>
+      <Loki />
+      { audioEnabled && <audio src={themeSong} autoPlay />}
+    </Container>
+  );
+};
 
 export default Demo;
